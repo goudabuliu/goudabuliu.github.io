@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ source ]
   workflow_dispatch:
 
 jobs:
@@ -28,6 +28,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages
+          publish_branch: master
           force_orphan: true
           keep_files: false

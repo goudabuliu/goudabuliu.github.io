@@ -28,9 +28,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          # 注意：这会用public/目录的内容覆盖master分支的根目录
-          # 建议先备份重要文件，或使用单独的发布分支
+          publish_branch: gh-pages
+          force_orphan: true
           keep_files: false
-          # 如果要保留源代码，考虑使用单独的gh-pages分支
-          # publish_branch: gh-pages
-          # 然后在GitHub Pages设置中切换发布分支
